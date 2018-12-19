@@ -7,22 +7,22 @@ imagemin = require("gulp-imagemin");
 concat = require("gulp-concat");
 connect = require("gulp-connect");
 // 复制font到dist
-gulp.src(['./src/font/*','./src/page/*'], {base: './src'})
-    .pipe(gulp.dest('dist'));
+gulp.src(['./src/font/*', './src/page/*'], { base: './src' })
+  .pipe(gulp.dest('dist'));
 // 开启服务器
-gulp.task("connect", function() {
+gulp.task("connect", function () {
   connect.server({
     root: "dist",
     livereload: true
   });
 });
 
-gulp.task("html", function() {
+gulp.task("html", function () {
   gulp.src("dist/*.html").pipe(connect.reload());
 });
 
 // 引入html文件
-gulp.task("fileinclude", function() {
+gulp.task("fileinclude", function () {
   gulp
     .src("src/**.html")
     .pipe(
@@ -35,7 +35,7 @@ gulp.task("fileinclude", function() {
 });
 
 // 合并scss
-gulp.task("sass", function() {
+gulp.task("sass", function () {
   gulp
     .src("src/**/*.scss")
     .pipe(sass({ outputStyle: "nested" }).on("error", sass.logError))
@@ -64,11 +64,15 @@ gulp.task("imageMin", () =>
   gulp
     .src("src/images/*")
     // .pipe(imagemin())
+    .pipe(imagemin({
+      optimizationLevel: 5, //类型：Number  默认：3  取值范围：0-7（优化等级）
+      progressive: true, //类型：Boolean 默认：false 无损压缩jpg图片
+    }))
     .pipe(gulp.dest("dist/images"))
 );
 
 // 压缩js
-gulp.task("scripts", function() {
+gulp.task("scripts", function () {
   gulp
     .src("src/js/*.js")
     // .pipe(concat("main.js"))
@@ -77,7 +81,7 @@ gulp.task("scripts", function() {
 });
 
 // 监听
-gulp.task("watch", function() {
+gulp.task("watch", function () {
   gulp.watch("src/js/*.js", ["scripts"]);
   gulp.watch("src/images/*", ["imageMin"]);
   gulp.watch("src/**/*.scss", ["sass"]);
