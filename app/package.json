@@ -1,0 +1,24 @@
+{
+  "name": "gulpexapp",
+  "version": "1.0.0",
+  "description": "Example app using Gulp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect": "^5.5.0",
+    "gulp-imagemin": "^3.2.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^2.1.2"
+  },
+  "dependencies": {
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-file-include": "^2.0.1",
+    "gulp-less": "^4.0.1"
+  }
+}
