@@ -1,0 +1,78 @@
+html {
+  font-family: "Microsoft YaHei";
+  color: #585858;
+  font-size: 12px;
+}
+
+body {
+  background: #fff;
+}
+
+a {
+  color: #585858;
+}
+
+a:hover {
+  color: red;
+}
+
+.w {
+  width: 1000px;
+  margin: auto;
+}
+
+.hd {
+  height: 40px;
+  line-height: 40px;
+  font-size: 15px;
+  color: #fff;
+  padding: 0 15px; // box-sizing: border-box;
+  border-top: 2px solid #1D67B0;
+  .lm-name {
+    float: left;
+    color: #666;
+  }
+  .more {
+    float: right;
+    color: #666;
+    font-size: 13px;
+    padding-right: 10px;
+    background: url("/images/jt-r.png") no-repeat right 10px;
+  }
+}
+
+.bd {
+  ul {
+    overflow: hidden;
+    margin-top: 10px;
+    li {
+      height: 30px;
+      line-height: 30px;
+      overflow: hidden;
+      position: relative;
+      padding-right: 70px;
+      a {
+        float: left;
+        color: #585858;
+        width: 100%;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        &::before {
+          content: "·";
+          font-size: 16px;
+          margin: 0 5px;
+        }
+        &:hover {
+          color: red;
+        }
+      }
+      span {
+        float: right;
+        position: absolute;
+        right: 0;
+        color: #999;
+      }
+    }
+  }
+}
