@@ -1,6 +1,10 @@
-@import "helpers/_minxins.scss";
-@import "base/_reset.scss";
-@import "base/_base.scss";
-@import "public/_header.scss";
-@import "public/_footer.scss";
-@import "_main.scss";
+@import "helpers/_minxins";
+@import "base/_reset";
+@import "base/_base";
+@import "public/_common";
+@import "public/_header";
+@import "public/_footer";
+@import "pages/home";
+@import "pages/nry";
+@import "pages/lby";
+@import "pages/jsy";
