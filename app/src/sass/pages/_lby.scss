@@ -1,0 +1,103 @@
+#lby {
+  .g-bd {
+    padding: 10px;
+    min-height: 530px;
+    margin: 20px auto;
+    border: .5px solid #ccc;
+    box-shadow: 0 0 6px #c2c2c2;
+    background: #fff;
+  }
+  a:hover {
+    color: #409200;
+  }
+
+  .g-sd {
+    float: left;
+    width: 240px;
+    height: 505px;
+    background: #fff;
+    box-shadow: 1px 1px 3px #c2c2c2;
+    text-align: center;
+    
+    .topName {
+      overflow: hidden; // border: 1px solid #DADADA;
+      background: url(/images/green_skin.png) 0 -294px repeat-x;
+      background: #409200;
+      text-align: center;
+      strong {
+        height: 35px;
+        line-height: 35px;
+        display: block;
+        color: #316301;
+        color: #fff;
+        letter-spacing: 1px;
+        font-size: 16px;
+      }
+    }
+    .lm_item {
+      border: 1px solid #DADADA;
+      border-top: 0;
+      li {
+        text-align: center;
+        font-size: 14px;
+        line-height: 2;
+        a {
+          box-sizing: border-box;
+        margin-top: 1px;
+        display: block;
+          width: 100%;
+          background: #f5f5f5;
+          &:hover {
+            color: #FFF;
+            background: #66A833;
+          }
+        }
+      }
+    }
+  }
+  .g-mn {
+    padding-left: 260px;
+    box-sizing: border-box;
+    width: 100%;
+    .local_box {
+      height: 30px;
+      line-height: 30px;
+      padding: 5px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #CCC;
+      li {
+        float: left;
+        font-size: 12px;
+      }
+    }
+    .bd {
+      font-size: 12px;
+ 
+      li {
+        border-bottom: 1px dashed #ccc;
+        height: 27px;
+        line-height: 27px;
+        padding-right: 150px;
+        position: relative;
+        a {
+          float: left;
+          width: 100%;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+        }
+        span {
+          position: absolute;
+          right: 0;
+        }
+      }
+      .fy {
+        text-align: center;
+        margin: 15px 0;
+        span {
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}

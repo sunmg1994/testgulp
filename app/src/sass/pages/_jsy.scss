@@ -1,0 +1,37 @@
+#jsy{
+  .g-bd{
+    padding: 10px 20px;
+    min-height: 530px;
+    margin: 20px auto;
+    border: .5px solid #ccc;
+    box-shadow: 0 0 6px #c2c2c2;
+    background: #fff;
+  }
+  .path {
+    height: 32px;
+    line-height: 32px;
+  }
+
+  .path h1 {
+    font-size: 18px;
+  }
+
+  .line {
+    margin: 10px 0;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .lis {
+    padding: 10px;
+  }
+
+  .page {
+    padding: 15px 0;
+    text-align: center;
+  }
+
+  .inner {
+    color: #666
+  }
+}

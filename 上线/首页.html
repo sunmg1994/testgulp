@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0">
+  <meta name="renderer" content="webkit" />
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/main.css">
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/html5.js"></script>
+  <script src="/js/jquery.SuperSlide.2.1.1.js"></script>
+  <script src="/js/main.js"></script>
+  <!--[if lt IE 9]>
+    <script src="http://cdn.bootcss.com/html5shiv/r29/html5.min.js"type="text/javascript" charset="utf-8"></script>
+    <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"type="text/javascript" charset="utf-8"></script>
+    <script src="https://cdn.bootcss.com/selectivizr/1.0.2/selectivizr.js"></script>
+  <![endif]-->
+  <title>上海市黄浦区新凌小学</title>
+</head>
+
+<body id="home">
+  <!-- ---- 通用>>--【头部】 -- 标签开始 ---- -->
+  <!--#include virtual='/include/ware_137.htm'-->
+  <!-- ---- 通用>>--【头部】 -- 标签结束 ---- -->
+
+  <div class="g-bd">
+    <div class="layer">
+      <!-- 首页横幅 21724 -->
+      <div class="m-lb1 w">
+        <div class="slider">
+          <div class="bd">
+            <ul>
+              #foreach( $r in
+              $InfoUtilData.getInfoList("site_id=$site_id;cat_id=21724;is_show_thumb=true;cur_page=$cur_page;size=4;orderby=ci.weight
+              desc,ci.released_dtime
+              desc"))
+              <li>
+                <a><img src="${r.thumb_url}" /></a>
+              </li>
+              #end
+            </ul>
+            <div class="pnBtn prev">
+              <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
+            </div>
+            <div class="pnBtn next">
+              <i class="fa fa-chevron-circle-right" aria-hidden="true"></i>
+            </div>
+          </div>
+          <div class="hd">
+            <ul></ul>
+          </div>
+        </div>
+        <script type="text/javascript">
+          /* 把最后一个放到第一个前面，然后通过外层ul{margin-left:-980px !important; }来显示第一个 */
+          jQuery(".m-lb1 .slider .bd li").first().before(jQuery(".slider .bd li").last());
+          // /* 控制左右按钮显示 */
+          // jQuery(".slider").hover(function () { jQuery(this).find(".arrow").stop(true, true).fadeIn(300) }, function () { jQuery(this).find(".arrow").fadeOut(300) });
+          jQuery(".m-lb1").hover(function () { $(".pnBtn").addClass("on"); }, function () { $(".pnBtn").removeClass("on"); })
+          /* 调用SuperSlide */
+          jQuery(".m-lb1 .slider").slide({ titCell: ".hd ul", mainCell: ".bd ul", effect: "leftLoop", autoPlay: true, vis: 3, autoPage: true, });
+        </script>
+      </div>
+    </div>
+    <div class="layer w">
+      <div class="jydtxwgk f-fl">
+        <div class="hasMoreTab">
+          <div class="hd">
+            <span class="more">
+              <a href="/info/iIndex.jsp?cat_id=21745" target="_blank">更多&gt;&gt;</a>
+              <a href="/info/iIndex.jsp?cat_id=21726" target="_blank">更多&gt;&gt;</a>
+            </span>
+            <ul>
+              <li>教育动态</li>
+              <li>校务公开</li>
+            </ul>
+          </div>
+          <div class="bd">
+            <div class="conWrap">
+              <!-- 教育动态 21745 -->
+              <div class="con m-jydt">
+                <ul class="f-ell">
+                  #foreach( $r in
+                  $InfoUtilData.getInfoList("site_id=$site_id;cat_id=21745;cur_page=$cur_page;size=8;orderby=ci.released_dtime
+                  desc"))
+                  <li class="li_bg">
+                    <a href="$r.content_url" target="_blank" title="${r.title}">${FormatUtil.cutString($r.title,38,"...")}</a>
+                    <span>[${FormatUtil.formatDate($r.released_dtime,"yyyy-MM-dd")}]</span>
+                  </li>
+                  #end
+                </ul>
+              </div>
+              <!-- 校务公开 21726 -->
+              <div class="con m-xwgk">
+                <ul class="f-ell">
+                  #foreach( $r in
+                  $InfoUtilData.getInfoList("site_id=$site_id;cat_id=21726;cur_page=$cur_page;size=8;orderby=ci.released_dtime
+                  desc"))
+                  <li class="li_bg">
+                    <a href="$r.content_url" target="_blank" title="${r.title}">${FormatUtil.cutString($r.title,38,"...")}</a>
+                    <span>[${FormatUtil.formatDate($r.released_dtime,"yyyy-MM-dd")}]</span>
+                  </li>
+                  #end
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <script type="text/javascript">
+          jQuery(".jydtxwgk .hasMoreTab").slide({ mainCell: ".conWrap", targetCell: ".more a", effect: "fold" });
+        </script>
+
+        <!-- 21745 -->
+        <div class="m-lb2">
+          <div class="focusBox" style="margin:0 auto">
+            <ul class="pic">
+              #foreach( $r in
+              $InfoUtilData.getInfoList("site_id=$site_id;cat_id=21745;is_show_thumb=true;cur_page=$cur_page;size=5;orderby=ci.released_dtime
+              desc"))
+              <li>
+                <a href="$r.content_url" target="_blank" title="${r.title}">
+                  <img src="${r.thumb_url}">
+                </a>
+              </li>
+              #end
+            </ul>
+            <div class="txt-bg"></div>
+            <div class="txt">
+              <ul>
+                #foreach( $r in
+                $InfoUtilData.getInfoList("site_id=$site_id;cat_id=21745;is_show_thumb=true;cur_page=$cur_page;size=5;orderby=ci.released_dtime
+                desc"))
+                <li>
+                  <a href="$r.content_url" target="_blank" title="${r.title}">${FormatUtil.cutString($r.title,11,"...")}</a>
+                </li>
+                #end
+              </ul>
+            </div>
+            <ul class="num">
+              <li class=""><a>1</a><span></span></li>
+              <li class=""><a>2</a><span></span></li>
+              <li class=""><a>3</a><span></span></li>
+              <li class=""><a>4</a><span></span></li>
+              <li class=""><a>5</a><span></span></li>
+            </ul>
+          </div>
+          <script type="text/javascript">
+            jQuery(".m-lb2 .focusBox").slide({ titCell: ".num li", mainCell: ".pic", effect: "fold", autoPlay: true, startFun: function (i) { jQuery(".m-lb1 .focusBox .txt li").eq(i).css({ "bottom": 0 }).siblings().css({ "bottom": -36 }); } });
+          </script>
+        </div>
+      </div>
+      <!-- 新凌小学教师专刊 21727 -->
+      <div class="m-jszk f-fr">
+        <div class="hd s-hd1">
+          <div class="lm_name">新凌小学教师专刊</div>
+          <a class="more" href="/info/iIndex.jsp?cat_id=21727">更多</a>
+        </div>
+        <div class="bd">
+          #foreach( $r in
+          $InfoUtilData.getInfoList("site_id=$site_id;cat_id=21727;is_show_thumb=true;cur_page=$cur_page;size=1;orderby=ci.released_dtime
+          desc"))
+          <div class="pic">
+            <a href="$r.content_url" target="_blank" title="${r.title}"><img src="${r.thumb_url}"></a>
+          </div>
+          <div class="txt">
+            <a href="$r.content_url" target="_blank" title="${r.title}">${FormatUtil.cutString($r.title,50,"...")}</a>
+          </div>
+          #end
+        </div>
+      </div>
+    </div>
+    <div class="layer w">
+      <div class="m-kstd f-fl">
+        <div class="hd s-hd2">
+          <div class="lm_name">快速通道</div>
+          <!-- <a class="more">更多&gt;&gt;</a> -->
+        </div>
+        <div class="bd">
+          <!-- 21746 -->
+          <a href="/info/iList.jsp?cat_id=21746">小学教研活动安排</a>
+          <!-- 21747 -->
+          <a href="/info/iList.jsp?cat_id=21747">学校一周工作</a>
+        </div>
+      </div>
+      <!-- 党务公开 21719 -->
+      <div class="m-dwgk f-fl">
+        <div class="hd s-hd2">
+          <div class="lm_name">党务公开</div>
+          <a class="more" href="/info/iIndex.jsp?cat_id=21719">更多&gt;&gt;</a>
+        </div>
+        <div class="bd">
+            <ul class="f-ell">
+                #foreach( $r in
+                $InfoUtilData.getInfoList("site_id=$site_id;cat_id=21719;cur_page=$cur_page;size=4;orderby=ci.released_dtime
+                desc"))
+                <li class="li_bg">
+                  <a href="$r.content_url" target="_blank" title="${r.title}">${FormatUtil.cutString($r.title,38,"...")}</a>
+                  <span>[${FormatUtil.formatDate($r.released_dtime,"yyyy-MM-dd")}]</span>
+                </li>
+                #end
+              </ul>
+        </div>
+      </div>
+      <!-- 教学科研 21728 -->
+      <div class="m-jxky f-fr">
+        <div class="hd s-hd2">
+          <div class="lm_name">教学科研</div>
+          <a class="more" href="/info/iIndex.jsp?cat_id=21728">更多&gt;&gt;</a>
+        </div>
+        <ul class="f-ell">
+          #foreach( $r in
+          $InfoUtilData.getInfoList("site_id=$site_id;cat_id=21728;cur_page=$cur_page;size=4;orderby=ci.released_dtime
+          desc"))
+          <li class="li_bg">
+            <a href="$r.content_url" target="_blank" title="${r.title}">${FormatUtil.cutString($r.title,38,"...")}</a>
+            <span>[${FormatUtil.formatDate($r.released_dtime,"yyyy-MM-dd")}]</span>
+          </li>
+          #end
+        </ul>
+      </div>
+    </div>
+    <div class="layer w">
+      <div class="xyfjbxcg f-fl">
+        <div class="hasMoreTab">
+          <div class="hd">
+            <span class="more">
+              <a href="/info/iIndex.jsp?cat_id=21729" target="_blank">更多</a>
+              <a href="/info/iIndex.jsp?cat_id=21730" target="_blank">更多</a>
+            </span>
+            <ul>
+              <li>校园风景</li>
+              <li>办学成果</li>
+            </ul>
+          </div>
+          <div class="bd">
+            <div class="conWrap">
+              <!-- 校园风景 21729 -->
+              <div class="con m-xyfj">
+                <div class="picMarquee-left">
+                  <div class="bd">
+                    <ul class="picList">
+                      #foreach( $r in
+                      $InfoUtilData.getInfoList("site_id=$site_id;cat_id=21729;is_show_thumb=true;cur_page=$cur_page;size=8;orderby=ci.released_dtime
+                      desc"))
+                      <li>
+                        <div class="pic"><a href="$r.content_url" target="_blank" title="${r.title}"><img src="${r.thumb_url}" /></a></div>
+                      </li>
+                      #end
+                    </ul>
+                  </div>
+                </div>
+                <script>
+                  jQuery(".m-xyfj .picMarquee-left").slide({ mainCell: ".bd ul", autoPlay: true, effect: "leftMarquee", vis: 6, interTime: 50, pnLoop: false, trigger: "click" });
+                </script>
+              </div>
+              <!-- 办学成果 21730 -->
+              <div class="con m-bxcg">
+                <div class="picMarquee-left">
+                  <div class="bd">
+                    <ul class="picList">
+                      #foreach( $r in
+                      $InfoUtilData.getInfoList("site_id=$site_id;cat_id=21730;is_show_thumb=true;cur_page=$cur_page;size=8;orderby=ci.released_dtime
+                      desc"))
+                      <li>
+                        <div class="pic"><a href="$r.content_url" target="_blank" title="${r.title}"><img src="${r.thumb_url}" /></a></div>
+                      </li>
+                      #end
+                    </ul>
+                  </div>
+                </div>
+                <script>
+                  jQuery(".m-bxcg .picMarquee-left").slide({ mainCell: ".bd ul", autoPlay: true, effect: "leftMarquee", vis: 6, interTime: 50, pnLoop: false, trigger: "click" });
+                </script>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <script type="text/javascript">
+          jQuery(".xyfjbxcg .hasMoreTab").slide({ mainCell: ".conWrap", targetCell: ".more a", effect: "fold" });
+        </script>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ---- 通用>>--【尾部】 -- 标签开始 ---- -->
+  <!--#include virtual='/include/ware_138.htm'-->
+  <!-- ---- 通用>>--【尾部】 -- 标签结束 ---- -->
+
+</body>
+
+</html>

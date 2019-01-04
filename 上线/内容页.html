@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0">
+  <meta name="renderer" content="webkit" /> 
+  <link rel="stylesheet" href="/css/main.css">
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/html5.js"></script>
+  <script src="/js/jquery.SuperSlide.2.1.1.js"></script>
+  <script src="/js/main.js"></script>
+  <!--[if lt IE 9]>
+    <script src="http://cdn.bootcss.com/html5shiv/r29/html5.min.js"type="text/javascript" charset="utf-8"></script>
+    <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"type="text/javascript" charset="utf-8"></script>
+    <script src="https://cdn.bootcss.com/selectivizr/1.0.2/selectivizr.js"></script>
+  <![endif]-->
+  <title>$!{InfoData.title}</title>
+</head>
+
+<body id="nry">
+  <!-- ---- 通用>>--【头部】 -- 标签开始 ---- -->
+  <!--#include virtual='/include/ware_137.htm'-->
+  <!-- ---- 通用>>--【头部】 -- 标签结束 ---- -->
+  <div class="g-bd w">
+      <div class="g-mn">
+        #set($categoryPosition=$InfoUtilData.getCategoryPosition("${InfoData.cat_id}","${InfoData.site_id}","","list"))
+        <div class="local_box">
+          <ul class="local_ul">
+            <li class="noLink">当前位置：</li>
+            #foreach( $pos in $categoryPosition) #if(${velocityCount}== 1)
+            <li><a href="/">$pos.cat_cname</a></li>
+            #else #if($pos.cat_cname == "首页")
+            <a href="$pos.url"> </a>
+            #else #if( ${velocityCount}!=$categoryCount)
+            <li>&gt;&gt;<a href="$pos.url">$pos.cat_cname</a></li>
+            #else
+            <li class="noLink">&gt;&gt; $pos.cat_cname</li>
+            #end
+            #end
+            #end
+            #end
+  
+          </ul>
+        </div>
+  
+  
+        <div class="m-content">
+          <div class="title">
+            <div class="title_1">$!{InfoData.title}</div>
+            #if($!{InfoData.subtitle} != "")
+            <div class="title_2"> $!{InfoData.subtitle}</div>
+            #end
+            <div class="title_3"><span class="source">发布日期:$!{InfoData.released_dtime}&nbsp;&nbsp;&nbsp;作者:$!{InfoData.source}&nbsp;&nbsp;&nbsp;</span></div>
+          </div>
+          <div class="inner">
+            <div class="text">
+              $!{InfoData.info_content}
+            </div>
+          </div>
+           <!-- 分享 start -->
+           <div class="share">
+            <div class="bshare-custom icon-medium" style="text-align: center;padding: 20px 0;">
+              <div class="bsPromo bsPromo2"></div>
+              <a title="分享到" href="http://www.bShare.cn/" id="bshare-shareto" class="bshare-more" style="line-height: 27px;">分享到：</a>
+              <a title="分享到QQ空间" class="bshare-qzone"></a>
+              <a title="分享到新浪微博" class="bshare-sinaminiblog"></a>
+              <a title="分享到人人网" class="bshare-renren"></a>
+              <a title="分享到腾讯微博" class="bshare-qqmb"></a>
+              <a title="分享到网易微博" class="bshare-neteasemb"></a>
+              <a title="分享到微信" class="bshare-weixin" href="javascript:void(0);"></a>
+              <a title="更多平台" class="bshare-more bshare-more-icon more-style-addthis"></a>
+            </div>
+            <script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=2&amp;lang=zh"></script>
+            <script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
+          </div>
+          <!-- 分享 end -->
+          <!--相关信息-->
+          <div class="information">
+            <div class="relevant">
+              <p>相关信息</p>
+            </div>
+            <hr class="line">
+            <ul style="height: 150px">
+              #set($flag= 1) #foreach( $r in $InfoUtilData.getRelatedInfoList($info_id)) #if($flag
+              < 6 ) <li>
+                <a href="$r.content_url" target="_blank">${FormatUtil.cutString($r.title,40,"...")}</a>
+                <span>${FormatUtil.formatDate($r.released_dtime,"yyyy-MM-dd")}</span>
+                </li>
+                #end #set($flag= ${flag}+1) #end
+            </ul>
+          </div>
+        </div>
+  
+      </div>
+      <div class="f-cb"></div>
+  </div>
+  <!-- ---- 通用>>--【尾部】 -- 标签开始 ---- -->
+  <!--#include virtual='/include/ware_138.htm'-->
+  <!-- ---- 通用>>--【尾部】 -- 标签结束 ---- -->
+</body>
+
+</html>

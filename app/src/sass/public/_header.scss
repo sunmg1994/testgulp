@@ -1,0 +1,77 @@
+.g-hd {
+  background: $color1;
+  .top1 {
+    height: 105px;
+    background: url("/images/top_bg.png")no-repeat right;
+    position: relative;
+    .m-logo {
+      height: 100px;
+      line-height: 100px;
+      img {
+        display: inline-block;
+        vertical-align: middle;
+      }
+      >div {
+        float: left;
+      }
+      .logo_pic {
+        margin-right: 15px;
+      }
+    }
+    .m-login {
+      position: absolute;
+      top: 20px;
+      right: 0;
+      a,
+      span {
+        color: #fff;
+      }
+    }
+    .m-search {
+      position: absolute;
+      bottom: 20px;
+      right: 0;
+      height: 22px;
+      .search_ipt {
+        float: left;
+        height: 30px;
+        width: 170px;
+        padding-left: 5px;
+        padding-right: 30px;
+        box-sizing: border-box;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+        box-shadow: 1px -1px 1px #ddd inset;
+      }
+      .search_btn {
+        float: left;
+        margin-top: 5px;
+        margin-left: -25px;
+        border: none;
+        outline: none;
+        background: none;
+        color: #fff;
+      }
+    }
+  }
+  .top2{
+    background: $color2;
+  }
+  .m-nav{
+    overflow: hidden;
+    a{
+      text-align: center;
+      font-size: 16px;
+      width: 14.28%;
+      height: 33px;
+      line-height: 33px;
+      float: left;
+      color: #fff;
+      &:hover{
+        background: #fff;
+        color: $color2;
+      }
+    }
+  }
+}

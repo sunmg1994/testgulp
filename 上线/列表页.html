@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0">
+  <meta name="renderer" content="webkit" />
+  <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/css/main.css">
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/html5.js"></script>
+  <script src="/js/jquery.SuperSlide.2.1.1.js"></script>
+  <script src="/js/main.js"></script>
+  <!--[if lt IE 9]>
+    <script src="http://cdn.bootcss.com/html5shiv/r29/html5.min.js"type="text/javascript" charset="utf-8"></script>
+    <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"type="text/javascript" charset="utf-8"></script>
+    <script src="https://cdn.bootcss.com/selectivizr/1.0.2/selectivizr.js"></script>
+  <![endif]-->
+  #set ($cco=$InfoUtilData.getCategoryObject("$cat_id","$site_id","$node_id"))
+  <title>$cco.cat_cname</title>
+</head>
+
+<body id="lby">
+  <!-- ---- 通用>>--【头部】 -- 标签开始 ---- -->
+  <!--#include virtual='/include/ware_137.htm'-->
+  <!-- ---- 通用>>--【头部】 -- 标签结束 ---- -->
+
+
+  <div class="g-bd w">
+    <div class="g-sd">
+      #set($categoryPosition=$InfoUtilData.getCategoryPosition("$cat_id","$site_id","$node_id","list"))
+      #set($categoryCount=0)
+      #foreach( $pos in $categoryPosition) #set($categoryCount=${velocityCount}) #end
+      <div class="lm">
+        <div class="topName"><strong>#set($categoryPosition=$InfoUtilData.getCategoryPosition("$cat_id","$site_id","$node_id","list"))
+            #set($categoryCount=0)
+            #foreach( $pos in $categoryPosition) #set($categoryCount=${velocityCount}) #end #foreach( $pos in
+            $categoryPosition)
+            #if( ${velocityCount}==2) $pos.cat_cname #end #end</strong></div>
+        <ul class="lm_item">
+          #set($categorylist=$InfoUtilData.getChildCategoryList(${cat_id},${site_id})) #set($categoryCount=0)
+          #foreach($pos in $categorylist)
+          #set($categoryCount=${velocityCount}) #end #if($categoryCount != 0) #foreach( $r in $categorylist)
+          <li>
+            <a #if(${cat_id}==${r.cat_id})class="cur" #end href="/info/iList.jsp?cat_id=$r.cat_id">$r.cat_cname</a>
+          </li> #end #else #set($catObj = $InfoUtilData.getCategoryObject("${cat_id}","$site_id","")) #set($parent_id
+          = $catObj.parent_id)
+          #set($categorylistt=$InfoUtilData.getChildCategoryList("$parent_id","${site_id}")) #foreach( $r in
+          $categorylistt)
+          <li>
+            <a #if(${cat_id}==${r.cat_id})class="cur" #end href="/info/iList.jsp?cat_id=$r.cat_id">$r.cat_cname</a>
+          </li> #end #end
+        </ul>
+      </div>
+    </div>
+    <div class="g-mn">
+      #set($categoryPosition=$InfoUtilData.getCategoryPosition("$cat_id","$site_id","$node_id","list"))
+      #set($categoryCount=0)
+      #foreach( $pos in $categoryPosition)
+      #set($categoryCount=${velocityCount})
+      #end
+      <div class="local_box">
+        <ul class="local_ul">
+          <li class="noLink">当前位置：</li>
+          #foreach( $pos in $categoryPosition) #if(${velocityCount}== 1)
+          <li><a href="/">$pos.cat_cname</a></li>
+          #else #if($pos.cat_cname == "首页")
+          <a href="$pos.url"> </a>
+          #else #if( ${velocityCount}!=$categoryCount)
+          <li>&gt;&gt;<a href="$pos.url">$pos.cat_cname</a></li>
+          #else
+          <li class="noLink">&gt;&gt; $pos.cat_cname</li>
+          #end
+          #end
+          #end
+          #end
+
+        </ul>
+      </div>
+
+
+
+      <div class="bd">
+        <ul>
+          #foreach( $r in
+          $InfoUtilData.getInfoList("site_id=$site_id;cat_id=$cat_id;cur_page=$cur_page;size=15;orderby=ci.released_dtime
+          desc"))
+          <li>
+            <a href="$r.content_url" target="_blank" title="${r.title}">${FormatUtil.cutString($r.title,38,"...")}</a>
+            <span>${FormatUtil.formatDate($r.released_dtime,"yyyy-MM-dd")}</span> </li>
+          #end
+        </ul>
+        <div class="fy">
+
+          #set($turnpage=$InfoUtilData.getInfoCount("site_id=$site_id;cat_id=$cat_id;cur_page=$cur_page;size=15;orderby=ci.released_dtime
+          desc"))
+          <span>共有${turnpage.count}条</span>
+          <span>当前第${turnpage.cur_page}/${turnpage.page_count}页</span>
+          <span><a href="?cat_id=$cat_id&cur_page=1">首页</a></span>
+          <span><a href="?cat_id=$cat_id&cur_page=$turnpage.prev_num">上一页</a></span>
+          <span><a href="?cat_id=$cat_id&cur_page=$turnpage.next_num">下一页</a></span>
+          <span><a href="?cat_id=$cat_id&cur_page=$turnpage.page_count">末页</a></span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ---- 通用>>--【尾部】 -- 标签开始 ---- -->
+  <!--#include virtual='/include/ware_138.htm'-->
+  <!-- ---- 通用>>--【尾部】 -- 标签结束 ---- -->
+</body>
+
+</html>

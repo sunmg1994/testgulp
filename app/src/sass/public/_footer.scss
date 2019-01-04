@@ -1,0 +1,31 @@
+.g-ft{
+  height: 105px;
+  border-top: 5px solid $color2;
+  padding-top: 15px;
+  background: $color1;
+  color: #fff;
+  text-align: center;
+  .w{
+    position: relative;
+  }
+  p{  
+    line-height: 2;
+  }
+  .biaoshi{
+    position: absolute;
+    right: 0;
+    top: 0;
+    p{
+      height: 30px;
+      line-height: 30px;
+      img{
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 5px;
+      }
+    }
+    .right{
+      padding-top: 12px;
+    }
+  }
+}
