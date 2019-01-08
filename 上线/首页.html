@@ -6,33 +6,33 @@
   <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0">
   <meta name="renderer" content="webkit" />
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="/css/main.css">
-  <script src="/js/jquery.min.js"></script>
-  <script src="/js/html5.js"></script>
-  <script src="/js/jquery.SuperSlide.2.1.1.js"></script>
-  <script src="/js/main.js"></script>
+  <link rel="stylesheet" href="/Default/css/main.css">
+  <script src="/Default/js/jquery.min.js"></script>
+  <script src="/Default/js/html5.js"></script>
+  <script src="/Default/js/jquery.SuperSlide.2.1.1.js"></script>
+  <script src="/Default/js/main.js"></script>
   <!--[if lt IE 9]>
     <script src="http://cdn.bootcss.com/html5shiv/r29/html5.min.js"type="text/javascript" charset="utf-8"></script>
     <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"type="text/javascript" charset="utf-8"></script>
     <script src="https://cdn.bootcss.com/selectivizr/1.0.2/selectivizr.js"></script>
   <![endif]-->
-  <title>上海市黄浦区新凌小学</title>
+  <title>上海市市八初级中学</title>
 </head>
 
 <body id="home">
   <!-- ---- 通用>>--【头部】 -- 标签开始 ---- -->
-  <!--#include virtual='/include/ware_137.htm'-->
+  <!--#include virtual='/include/ware_141.htm'-->
   <!-- ---- 通用>>--【头部】 -- 标签结束 ---- -->
 
-  <div class="g-bd">
+  <div class="g-bd w">
     <div class="layer">
-      <!-- 首页横幅 21724 -->
+      <!-- 首页横幅 21781 -->
       <div class="m-lb1 w">
         <div class="slider">
           <div class="bd">
             <ul>
               #foreach( $r in
-              $InfoUtilData.getInfoList("site_id=$site_id;cat_id=21724;is_show_thumb=true;cur_page=$cur_page;size=4;orderby=ci.weight
+              $InfoUtilData.getInfoList("site_id=$site_id;cat_id=21781;is_show_thumb=true;cur_page=$cur_page;size=4;orderby=ci.weight
               desc,ci.released_dtime
               desc"))
               <li>
@@ -63,25 +63,34 @@
       </div>
     </div>
     <div class="layer w">
-      <div class="jydtxwgk f-fl">
+      <!-- 学校概况,新闻快讯,校务公开 -->
+      <div class="xxxwxw f-fl">
         <div class="hasMoreTab">
           <div class="hd">
             <span class="more">
-              <a href="/info/iIndex.jsp?cat_id=21745" target="_blank">更多&gt;&gt;</a>
-              <a href="/info/iIndex.jsp?cat_id=21726" target="_blank">更多&gt;&gt;</a>
+              <!--
+                  学校概况  21785
+                  新闻快讯  21783
+                  校务公开  21784
+                 -->
+
+              <a href="/info/iIndex.jsp?cat_id=21785" target="_blank">更多&gt;&gt;</a>
+              <a href="/info/iIndex.jsp?cat_id=21783" target="_blank">更多&gt;&gt;</a>
+              <a href="/info/iIndex.jsp?cat_id=21784" target="_blank">更多&gt;&gt;</a>
             </span>
             <ul>
-              <li>教育动态</li>
+              <li>学校概况</li>
+              <li>新闻快讯</li>
               <li>校务公开</li>
             </ul>
           </div>
           <div class="bd">
             <div class="conWrap">
-              <!-- 教育动态 21745 -->
-              <div class="con m-jydt">
+              <!-- 学校概况  21785  -->
+              <div class="con m-xxgk">
                 <ul class="f-ell">
                   #foreach( $r in
-                  $InfoUtilData.getInfoList("site_id=$site_id;cat_id=21745;cur_page=$cur_page;size=8;orderby=ci.released_dtime
+                  $InfoUtilData.getInfoList("site_id=$site_id;cat_id=21785;cur_page=$cur_page;size=8;orderby=ci.released_dtime
                   desc"))
                   <li class="li_bg">
                     <a href="$r.content_url" target="_blank" title="${r.title}">${FormatUtil.cutString($r.title,38,"...")}</a>
@@ -90,11 +99,24 @@
                   #end
                 </ul>
               </div>
-              <!-- 校务公开 21726 -->
+              <!-- 新闻快讯  21783  -->
+              <div class="con m-xwkx">
+                <ul class="f-ell">
+                  #foreach( $r in
+                  $InfoUtilData.getInfoList("site_id=$site_id;cat_id=21783;cur_page=$cur_page;size=8;orderby=ci.released_dtime
+                  desc"))
+                  <li class="li_bg">
+                    <a href="$r.content_url" target="_blank" title="${r.title}">${FormatUtil.cutString($r.title,38,"...")}</a>
+                    <span>[${FormatUtil.formatDate($r.released_dtime,"yyyy-MM-dd")}]</span>
+                  </li>
+                  #end
+                </ul>
+              </div>
+              <!-- 校务公开  21784  -->
               <div class="con m-xwgk">
                 <ul class="f-ell">
                   #foreach( $r in
-                  $InfoUtilData.getInfoList("site_id=$site_id;cat_id=21726;cur_page=$cur_page;size=8;orderby=ci.released_dtime
+                  $InfoUtilData.getInfoList("site_id=$site_id;cat_id=21784;cur_page=$cur_page;size=8;orderby=ci.released_dtime
                   desc"))
                   <li class="li_bg">
                     <a href="$r.content_url" target="_blank" title="${r.title}">${FormatUtil.cutString($r.title,38,"...")}</a>
@@ -108,15 +130,15 @@
           </div>
         </div>
         <script type="text/javascript">
-          jQuery(".jydtxwgk .hasMoreTab").slide({ mainCell: ".conWrap", targetCell: ".more a", effect: "fold" });
+          jQuery(".xxxwxw .hasMoreTab").slide({ mainCell: ".conWrap", targetCell: ".more a", effect: "fold" });
         </script>
 
-        <!-- 21745 -->
+        <!-- 21783 -->
         <div class="m-lb2">
           <div class="focusBox" style="margin:0 auto">
             <ul class="pic">
               #foreach( $r in
-              $InfoUtilData.getInfoList("site_id=$site_id;cat_id=21745;is_show_thumb=true;cur_page=$cur_page;size=5;orderby=ci.released_dtime
+              $InfoUtilData.getInfoList("site_id=$site_id;cat_id=21783;is_show_thumb=true;cur_page=$cur_page;size=5;orderby=ci.released_dtime
               desc"))
               <li>
                 <a href="$r.content_url" target="_blank" title="${r.title}">
@@ -129,7 +151,7 @@
             <div class="txt">
               <ul>
                 #foreach( $r in
-                $InfoUtilData.getInfoList("site_id=$site_id;cat_id=21745;is_show_thumb=true;cur_page=$cur_page;size=5;orderby=ci.released_dtime
+                $InfoUtilData.getInfoList("site_id=$site_id;cat_id=21783;is_show_thumb=true;cur_page=$cur_page;size=5;orderby=ci.released_dtime
                 desc"))
                 <li>
                   <a href="$r.content_url" target="_blank" title="${r.title}">${FormatUtil.cutString($r.title,11,"...")}</a>
@@ -150,23 +172,82 @@
           </script>
         </div>
       </div>
-      <!-- 新凌小学教师专刊 21727 -->
-      <div class="m-jszk f-fr">
+      <!-- 通知公告  21779 -->
+      <div class="m-tzgg f-fr">
         <div class="hd s-hd1">
-          <div class="lm_name">新凌小学教师专刊</div>
-          <a class="more" href="/info/iIndex.jsp?cat_id=21727">更多</a>
+          <div class="lm_name">党务公开</div>
+          <a class="more" href="/info/iIndex.jsp?cat_id=21779">更多&gt;&gt;</a>
         </div>
         <div class="bd">
-          #foreach( $r in
-          $InfoUtilData.getInfoList("site_id=$site_id;cat_id=21727;is_show_thumb=true;cur_page=$cur_page;size=1;orderby=ci.released_dtime
-          desc"))
-          <div class="pic">
-            <a href="$r.content_url" target="_blank" title="${r.title}"><img src="${r.thumb_url}"></a>
-          </div>
-          <div class="txt">
-            <a href="$r.content_url" target="_blank" title="${r.title}">${FormatUtil.cutString($r.title,50,"...")}</a>
-          </div>
-          #end
+          <ul class="f-ell">
+            #foreach( $r in
+            $InfoUtilData.getInfoList("site_id=$site_id;cat_id=21779;cur_page=$cur_page;size=8;orderby=ci.released_dtime
+            desc"))
+            <li class="li_bg">
+              <a href="$r.content_url" target="_blank" title="${r.title}">${FormatUtil.cutString($r.title,38,"...")}</a>
+              <span>[${FormatUtil.formatDate($r.released_dtime,"yyyy-MM-dd")}]</span>
+            </li>
+            #end
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="layer w">
+      <!-- 学生发展  21796 -->
+      <div class="m-xsfz f-fl">
+        <div class="hd s-hd2">
+          <div class="lm_name">学生发展</div>
+          <a class="more" href="/info/iIndex.jsp?cat_id=21796">更多&gt;&gt;</a>
+        </div>
+        <div class="bd">
+          <ul class="f-ell">
+            #foreach( $r in
+            $InfoUtilData.getInfoList("site_id=$site_id;cat_id=21796;cur_page=$cur_page;size=8;orderby=ci.released_dtime
+            desc"))
+            <li class="li_bg">
+              <a href="$r.content_url" target="_blank" title="${r.title}">${FormatUtil.cutString($r.title,38,"...")}</a>
+              <span>[${FormatUtil.formatDate($r.released_dtime,"yyyy-MM-dd")}]</span>
+            </li>
+            #end
+          </ul>
+        </div>
+      </div>
+      <!-- 教师发展 21802 -->
+      <div class="m-jsfz f-fl">
+        <div class="hd s-hd2">
+          <div class="lm_name">教师发展</div>
+          <a class="more" href="/info/iIndex.jsp?cat_id=21802">更多&gt;&gt;</a>
+        </div>
+        <div class="bd">
+          <ul class="f-ell">
+            #foreach( $r in
+            $InfoUtilData.getInfoList("site_id=$site_id;cat_id=21802;cur_page=$cur_page;size=8;orderby=ci.released_dtime
+            desc"))
+            <li class="li_bg">
+              <a href="$r.content_url" target="_blank" title="${r.title}">${FormatUtil.cutString($r.title,38,"...")}</a>
+              <span>[${FormatUtil.formatDate($r.released_dtime,"yyyy-MM-dd")}]</span>
+            </li>
+            #end
+          </ul>
+        </div>
+      </div>
+      <!-- 党旗飘扬 21788 -->
+      <div class="m-dqpy f-fr">
+        <div class="hd s-hd2">
+          <div class="lm_name">党旗飘扬</div>
+          <a class="more" href="/info/iIndex.jsp?cat_id=21788">更多&gt;&gt;</a>
+        </div>
+        <div class="bd">
+          <ul class="f-ell">
+            #foreach( $r in
+            $InfoUtilData.getInfoList("site_id=$site_id;cat_id=21788;cur_page=$cur_page;size=8;orderby=ci.released_dtime
+            desc"))
+            <li class="li_bg">
+              <a href="$r.content_url" target="_blank" title="${r.title}">${FormatUtil.cutString($r.title,38,"...")}</a>
+              <span>[${FormatUtil.formatDate($r.released_dtime,"yyyy-MM-dd")}]</span>
+            </li>
+            #end
+          </ul>
         </div>
       </div>
     </div>
@@ -177,116 +258,80 @@
           <!-- <a class="more">更多&gt;&gt;</a> -->
         </div>
         <div class="bd">
-          <!-- 21746 -->
-          <a href="/info/iList.jsp?cat_id=21746">小学教研活动安排</a>
-          <!-- 21747 -->
-          <a href="/info/iList.jsp?cat_id=21747">学校一周工作</a>
+          <a href="">市入学系统平台</a>
+          <a href="">市区教师培训平台</a>
+          <a href="">数字图书馆</a>
+          <!-- 21794 -->
+          <a href="/info/iIndex.jsp?cat_id=21794">信息公开</a>
         </div>
       </div>
-      <!-- 党务公开 21719 -->
-      <div class="m-dwgk f-fl">
+      <!-- 校园文化  21782 -->
+      <div class="m-xywh f-fl">
         <div class="hd s-hd2">
-          <div class="lm_name">党务公开</div>
-          <a class="more" href="/info/iIndex.jsp?cat_id=21719">更多&gt;&gt;</a>
+          <div class="lm_name">校园文化</div>
+          <a class="more" href="/info/iIndex.jsp?cat_id=21782">更多&gt;&gt;</a>
         </div>
         <div class="bd">
-            <ul class="f-ell">
-                #foreach( $r in
-                $InfoUtilData.getInfoList("site_id=$site_id;cat_id=21719;cur_page=$cur_page;size=4;orderby=ci.released_dtime
-                desc"))
-                <li class="li_bg">
-                  <a href="$r.content_url" target="_blank" title="${r.title}">${FormatUtil.cutString($r.title,38,"...")}</a>
-                  <span>[${FormatUtil.formatDate($r.released_dtime,"yyyy-MM-dd")}]</span>
-                </li>
-                #end
-              </ul>
+          <ul class="f-ell">
+            #foreach( $r in
+            $InfoUtilData.getInfoList("site_id=$site_id;cat_id=21782;cur_page=$cur_page;size=4;orderby=ci.released_dtime
+            desc"))
+            <li class="li_bg">
+              <a href="$r.content_url" target="_blank" title="${r.title}">${FormatUtil.cutString($r.title,38,"...")}</a>
+              <span>[${FormatUtil.formatDate($r.released_dtime,"yyyy-MM-dd")}]</span>
+            </li>
+            #end
+          </ul>
         </div>
       </div>
-      <!-- 教学科研 21728 -->
-      <div class="m-jxky f-fr">
+      <!-- 工会之家  21807 -->
+      <div class="m-ghzj f-fr">
         <div class="hd s-hd2">
-          <div class="lm_name">教学科研</div>
-          <a class="more" href="/info/iIndex.jsp?cat_id=21728">更多&gt;&gt;</a>
+          <div class="lm_name">工会之家</div>
+          <a class="more" href="/info/iIndex.jsp?cat_id=21807">更多&gt;&gt;</a>
         </div>
-        <ul class="f-ell">
-          #foreach( $r in
-          $InfoUtilData.getInfoList("site_id=$site_id;cat_id=21728;cur_page=$cur_page;size=4;orderby=ci.released_dtime
-          desc"))
-          <li class="li_bg">
-            <a href="$r.content_url" target="_blank" title="${r.title}">${FormatUtil.cutString($r.title,38,"...")}</a>
-            <span>[${FormatUtil.formatDate($r.released_dtime,"yyyy-MM-dd")}]</span>
-          </li>
-          #end
-        </ul>
+        <div class="bd">
+          <ul class="f-ell">
+            #foreach( $r in
+            $InfoUtilData.getInfoList("site_id=$site_id;cat_id=21807;cur_page=$cur_page;size=4;orderby=ci.released_dtime
+            desc"))
+            <li class="li_bg">
+              <a href="$r.content_url" target="_blank" title="${r.title}">${FormatUtil.cutString($r.title,38,"...")}</a>
+              <span>[${FormatUtil.formatDate($r.released_dtime,"yyyy-MM-dd")}]</span>
+            </li>
+            #end
+          </ul>
+        </div>
       </div>
     </div>
+    <!-- 美丽校园  21780 -->
     <div class="layer w">
-      <div class="xyfjbxcg f-fl">
-        <div class="hasMoreTab">
-          <div class="hd">
-            <span class="more">
-              <a href="/info/iIndex.jsp?cat_id=21729" target="_blank">更多</a>
-              <a href="/info/iIndex.jsp?cat_id=21730" target="_blank">更多</a>
-            </span>
-            <ul>
-              <li>校园风景</li>
-              <li>办学成果</li>
-            </ul>
-          </div>
-          <div class="bd">
-            <div class="conWrap">
-              <!-- 校园风景 21729 -->
-              <div class="con m-xyfj">
-                <div class="picMarquee-left">
-                  <div class="bd">
-                    <ul class="picList">
-                      #foreach( $r in
-                      $InfoUtilData.getInfoList("site_id=$site_id;cat_id=21729;is_show_thumb=true;cur_page=$cur_page;size=8;orderby=ci.released_dtime
-                      desc"))
-                      <li>
-                        <div class="pic"><a href="$r.content_url" target="_blank" title="${r.title}"><img src="${r.thumb_url}" /></a></div>
-                      </li>
-                      #end
-                    </ul>
-                  </div>
-                </div>
-                <script>
-                  jQuery(".m-xyfj .picMarquee-left").slide({ mainCell: ".bd ul", autoPlay: true, effect: "leftMarquee", vis: 6, interTime: 50, pnLoop: false, trigger: "click" });
-                </script>
-              </div>
-              <!-- 办学成果 21730 -->
-              <div class="con m-bxcg">
-                <div class="picMarquee-left">
-                  <div class="bd">
-                    <ul class="picList">
-                      #foreach( $r in
-                      $InfoUtilData.getInfoList("site_id=$site_id;cat_id=21730;is_show_thumb=true;cur_page=$cur_page;size=8;orderby=ci.released_dtime
-                      desc"))
-                      <li>
-                        <div class="pic"><a href="$r.content_url" target="_blank" title="${r.title}"><img src="${r.thumb_url}" /></a></div>
-                      </li>
-                      #end
-                    </ul>
-                  </div>
-                </div>
-                <script>
-                  jQuery(".m-bxcg .picMarquee-left").slide({ mainCell: ".bd ul", autoPlay: true, effect: "leftMarquee", vis: 6, interTime: 50, pnLoop: false, trigger: "click" });
-                </script>
-              </div>
-            </div>
-
-          </div>
+      <div class="m-mlxy">
+        <div class="hd s-hd1">
+          <div class="lm_name">美丽校园</div>
+          <a class="more" href="/info/iIndex.jsp?cat_id=21780">更多&gt;&gt;</a>
         </div>
-        <script type="text/javascript">
-          jQuery(".xyfjbxcg .hasMoreTab").slide({ mainCell: ".conWrap", targetCell: ".more a", effect: "fold" });
+
+        <div class="bd">
+          <ul class="picList">
+            #foreach( $r in
+            $InfoUtilData.getInfoList("site_id=$site_id;cat_id=21780;is_show_thumb=true;cur_page=$cur_page;size=15;orderby=ci.released_dtime
+            desc"))
+            <li>
+              <div class="pic"><a href="$r.content_url" target="_blank" title="${r.title}"><img src="${r.thumb_url}" /></a></div>
+            </li>
+            #end
+          </ul>
+        </div>
+        <script>
+          jQuery(".m-mlxy").slide({ mainCell: ".bd ul", autoPlay: true, effect: "leftMarquee", vis: 6, interTime: 50, pnLoop: false, trigger: "click" });
         </script>
       </div>
     </div>
   </div>
 
-
   <!-- ---- 通用>>--【尾部】 -- 标签开始 ---- -->
-  <!--#include virtual='/include/ware_138.htm'-->
+  <!--#include virtual='/include/ware_142.htm'-->
   <!-- ---- 通用>>--【尾部】 -- 标签结束 ---- -->
 
 </body>

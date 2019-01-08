@@ -7,7 +7,9 @@ imagemin = require("gulp-imagemin");
 concat = require("gulp-concat");
 connect = require("gulp-connect");
 // 复制font到dist
-gulp.src(['./src/font/*', './src/page/*'], { base: './src' })
+gulp.src(['./src/font/*', './src/page/*'], {
+    base: './src'
+  })
   .pipe(gulp.dest('dist'));
 // 开启服务器
 gulp.task("connect", function () {
@@ -38,7 +40,9 @@ gulp.task("fileinclude", function () {
 gulp.task("sass", function () {
   gulp
     .src("src/**/*.scss")
-    .pipe(sass({ outputStyle: "nested" }).on("error", sass.logError))
+    .pipe(sass({
+      outputStyle: "nested"
+    }).on("error", sass.logError))
     .pipe(
       autoprefixer({
         browsers: [
@@ -56,19 +60,19 @@ gulp.task("sass", function () {
 
     .pipe(concat("main.css"))
     // CSS样式输出(nested | expanded | compact | compressed)
-    .pipe(gulp.dest("dist/css/"));
+    .pipe(gulp.dest("dist/Default/css/"));
 });
 
 // 压缩图片
 gulp.task("imageMin", () =>
   gulp
-    .src("src/images/*")
-    // .pipe(imagemin())
-    .pipe(imagemin({
-      optimizationLevel: 5, //类型：Number  默认：3  取值范围：0-7（优化等级）
-      progressive: true, //类型：Boolean 默认：false 无损压缩jpg图片
-    }))
-    .pipe(gulp.dest("dist/images"))
+  .src("src/images/*")
+  // .pipe(imagemin())
+  .pipe(imagemin({
+    optimizationLevel: 5, //类型：Number  默认：3  取值范围：0-7（优化等级）
+    progressive: true, //类型：Boolean 默认：false 无损压缩jpg图片
+  }))
+  .pipe(gulp.dest("dist/default/images"))
 );
 
 // 压缩js
@@ -77,17 +81,17 @@ gulp.task("scripts", function () {
     .src("src/js/*.js")
     // .pipe(concat("main.js"))
     // .pipe(uglify())
-    .pipe(gulp.dest("dist/js"));
+    .pipe(gulp.dest("dist/default/js"));
 });
 
 // 监听
 gulp.task("watch", function () {
   gulp.watch("src/js/*.js", ["scripts"]);
-  gulp.watch("src/images/*", ["imageMin"]);
+  // gulp.watch("src/images/*", ["imageMin"]);
   gulp.watch("src/**/*.scss", ["sass"]);
   gulp.watch("src/**/*.html", ["fileinclude"]);
-  gulp.watch(["dist/*.html"], ["html"]);
-  gulp.watch(["dist/css/*.css"], ["html"]);
+  gulp.watch(["dist/default/*.html"], ["html"]);
+  gulp.watch(["dist/default/css/*.css"], ["html"]);
 });
 
 gulp.task("default", ["sass", "scripts", "fileinclude", "imageMin"]);
