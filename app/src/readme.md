@@ -35,7 +35,7 @@ sass/
 |      ...                 # Etc… 
 | 
 |– themes/ 
-|     |– _theme.scss        # Default theme 
+|     |– _theme.scss        # default theme 
 |     |– _admin.scss        # Admin theme 
 |     ...                  # Etc… 
 | 

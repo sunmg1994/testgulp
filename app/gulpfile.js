@@ -60,7 +60,7 @@ gulp.task("sass", function () {
 
     .pipe(concat("main.css"))
     // CSS样式输出(nested | expanded | compact | compressed)
-    .pipe(gulp.dest("dist/Default/css/"));
+    .pipe(gulp.dest("dist/default/css/"));
 });
 
 // 压缩图片
@@ -90,7 +90,7 @@ gulp.task("watch", function () {
   // gulp.watch("src/images/*", ["imageMin"]);
   gulp.watch("src/**/*.scss", ["sass"]);
   gulp.watch("src/**/*.html", ["fileinclude"]);
-  gulp.watch(["dist/default/*.html"], ["html"]);
+  gulp.watch(["dist/*.html"], ["html"]);
   gulp.watch(["dist/default/css/*.css"], ["html"]);
 });
 
